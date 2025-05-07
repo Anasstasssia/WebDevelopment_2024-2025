@@ -1,0 +1,24 @@
+/* styles.css */
+body, html{
+	font-family: Arial, sans-serif;
+	text-align: center;
+    background-color: EBF2FA/*#918B76*/
+
+}
+
+h1{
+	text-align: center;
+}
+
+img{
+	text-align: center;
+	
+}
+area {
+	transition: all 0.3s ease;
+}
+
+/* Изменение цвета области при наведении */
+area:hover {
+	outline: 3px solid red;  /* Например, красная рамка */
+}

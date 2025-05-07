@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Lab 3 task 3.2 </title>
+		<link rel="stylesheet" href="style_for_file1.css">
+	</head>
+	<body>
+
+		<h1>Создание карты изображений на фото</h1>
+		<img src="боберутка.jpg" title="this is beaver and duck" alt ="Workspace" usemap="#workmap">
+		<map name="workmap">
+		  <area href="https://music.yandex.ru/album/32966628/track/130341040?utm_source=web&utm_medium=copy_link" title = "Бобер"coords="247,769,231,634,218,500,333,385,294,286,320,240,424,147,508,225,521,377,580,528,547,655,514,764,394,815" shape="poly">
+
+		  <area href="duck.html" title="Утка" coords="599,594,638,545,584,504,635,432,670,360,604,395,570,359,637,280,665,231,715,223,756,307,750,410,845,511,788,642,762,654" shape="poly">
+
+		  <area href="https://yandex.ru/images/search?text=лес" title = "Лес"coords="239,346,13,345,2,79,26,4,151,110,358,137,497,147,860,210,1015,41,1017,340,762,338,744,245,695,211,607,258,610,320,529,322,521,251,508,194,440,148,365,163,311,190,309,242,292,336" shape="poly">
+
+		  <area href="https://bigenc.ru/c/ptitsy-0b635b" title="Птица"  coords="764,106,55" shape="circle">
+
+		  <area  href="javascript:void(0);" title="Вода" coords="566,1009,1005,735" shape="rect" onclick="scrollToSection()">
+		</map>
+
+		<div id = "pic_water">
+		<h1>А здесь вода</h1>
+		<img src="water.png" title="Just water" alt ="Workspace2" usemap="#workmap2">
+		
+	    </div>
+	</body>
+	<script>
+	  function scrollToSection() {
+	    document.getElementById('pic_water').scrollIntoView({ behavior: 'smooth' });
+	  }
+	</script>
+</html>
