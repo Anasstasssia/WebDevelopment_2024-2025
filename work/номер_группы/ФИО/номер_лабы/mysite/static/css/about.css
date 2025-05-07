@@ -1,0 +1,83 @@
+/* Родительский контейнер для всех блоков */
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Контейнер, в котором находятся блоки информации и технологий */
+.container_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* Для выравнивания по вертикали */
+    flex-wrap: wrap; 
+    align-items: stretch; /* Все блоки растягиваются по высоте */
+}
+
+/* Блоки с информацией и технологиями */
+.block_all_info, .block_tech_n_tools {
+    flex: 1; /* Чтобы оба блока растягивались на доступную ширину */
+    background-color: #ffffff;
+    max-width: 30%; /* Ограничиваем максимальную ширину */
+    margin: 0 30px;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    color: #231c07;
+    padding: 20px;  /* Паддинг для внутреннего отступа */
+    display: block; /* Убираем выравнивание по центру */
+    height: 35vh;
+    text-align: justify;  /* Выравнивание текста по ширине */
+    line-height: 1.25;    /* Отступ между строками */
+}
+
+
+/* Блок "Об авторе" */
+.block_author {
+    background-color: #ffffff;
+    margin: 0 30px;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: #231c07;
+    height: 20vh;  /* Убираем фиксированную высоту для адаптивности */
+    display: flex;  /* Используем flex для выравнивания контента */
+    align-items: center; /* Вертикальное выравнивание элементов */
+    gap: 20px; /* Отступ между фото и текстом */
+    padding: 20px;  /* Паддинг для внутреннего отступа */
+    width: 50vh;
+    line-height: 1.25; 
+}
+
+/* Фото автора */
+.block_author img {
+    width: 125px;  /* Размер фотографии */
+    height: 125px;  /* Размер фотографии */
+    object-fit: cover;  /* Обрезка фото, чтобы оно заполнило круг */
+    border-radius: 50%; /* Делает изображение круглым */
+    margin-left: 0; /* Сдвигаем фото влево */
+}
+
+/* Информация об авторе */
+.block_author .author_info {
+    display: flex;
+    flex-direction: column; /* Текст справа будет расположен вертикально */
+    justify-content: center; /* Вертикальное выравнивание текста */
+}
+
+/* Заголовок */
+h3 {
+    text-align: left; 
+    margin: 0;
+}
+
+/* Текст информации */
+.author_info p {
+    margin: 5px 0; /* Отступы между строками */
+
+}
+
+/* Для адаптивности на маленьких экранах */
+@media (max-width: 768px) {
+    .block_all_info, .block_tech_n_tools, .block_author {
+        max-width: 90%;  /* Уменьшаем ширину блоков на мобильных */
+    }
+}

@@ -1,0 +1,291 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f7f3;
+    margin: 0;    
+}
+
+footer{
+    text-align: center;
+}
+header {
+    display: flex;
+    background-color: #f9f7f3;
+    padding: 20px 10px;
+    align-items: center;
+    flex-wrap: wrap; /* Разрешаем перенос на мобильных */
+    gap: 20px; /* Отступ между элементами */
+
+}
+
+header h1 {
+    margin: 0 20px;
+    align-items: center; 
+    font-size: 24px;
+    flex: 0 0 auto; /* Не растягивается и не сжимается */
+    min-width: 100px; /* Минимальная ширина заголовка */
+    color: #231c07;
+}
+
+header nav {
+    display: flex;
+    gap: 15px; /* Расстояние между кнопками */
+    position: absolute;
+    align-items: center; /* Центрируем ссылки по вертикали */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    color: #231c07;
+}
+
+header nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    border: 2px solid transparent; /* Прозрачная граница для сохранения размера */
+    border-radius: 15px; /* Скругление углов */
+    transition: all 0.3s ease; /* Плавные анимации */
+    flex-shrink: 0; /* Запрещаем сжатие ссылок */
+}
+
+header nav a:hover {
+    border-color: #fb8500; /*  обводка при наведении */
+}
+
+header nav a.active {
+    background-color: #fd9e02; /* Лёгкая заливка */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Тень */
+}
+
+
+
+
+.container_1 {
+    width: 100%;
+    margin: 0;
+    max-height: 100vh;
+    padding: 0;
+}
+.container_2{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.left_panel_container{
+    flex: 0 0 55%;
+    max-width: 55%;
+
+}
+/* Стили для галереи */
+.gallery-container {
+    width: 100%;
+    padding: 0;
+}
+
+.gallery-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #231c07;
+}
+
+.gallery-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 0;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+   
+}
+
+.gallery-scroll:hover {
+    animation-play-state: paused;
+}
+
+
+
+.gallery-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    width: 150px;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Правая панель */
+.side-panel {
+    flex: 0 0 45%;
+    max-width: 45%;
+    background-color: #ffffff;
+    padding: 20px;
+    padding-top: 5px;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    height: fit-content;
+    color: #231c07;
+}
+
+
+
+.photo_n_sound_container {
+
+}
+
+.meme-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 15px;
+    color: #231c07;
+}
+
+.meme-image-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+}
+
+.meme-image {
+    width: 100%;
+    max-height: 400px;
+    height: auto;
+    border-radius: 16px !important;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.meme-image:hover {
+    transform: scale(1.05);
+}
+
+
+.press-hint {
+    font-style: italic;
+    color: #888;
+    margin-top: -8px;
+    margin-bottom: 6px;
+    font-size: 0.9em;
+}
+
+
+.collapsible-wrapper {
+    margin: 20px 0;
+}
+
+.collapsible-line-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+    position: relative;
+}
+
+.collapsible-line {
+    flex: 1;
+    height: 1.5px;
+    background-color: #fb8500;
+}
+
+.collapsible-circle {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: 1.5px solid #fb8500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+
+}
+
+.arrow-down {
+    width: 20px;
+    height: 20px;
+    color: #fb8500;
+}
+
+
+
+/* Скрываемый блок */
+.collapsible-content {
+    display: none;
+    border: 2px dashed #ccc;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+
+/* Видео блок */
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0; /* Убираем все промежутки между видео */
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Заполняет контейнер */
+
+}
+
+
+.video-item {
+    margin: 0;
+    padding: 0;
+}
+
+
+.video-item video {
+    width: 100%;
+    height: auto;
+    border: none; /* Убираем рамки у видео */
+    box-shadow: none; /* Убираем тени, если не нужны */
+    border-radius: 0; /* Убираем скругления */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transform: scale(0.9); /* уменьшает видео до 80% */
+    transform-origin: center;
+    margin: 0;    
+}
+
+
+.video-item video {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+

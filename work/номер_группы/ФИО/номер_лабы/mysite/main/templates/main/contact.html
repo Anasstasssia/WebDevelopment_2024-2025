@@ -1,0 +1,20 @@
+{% extends 'main/index.html' %}
+{% block title %}Обратная связь{% endblock %}
+
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block main_content %}
+
+    <p class = "p_contact"> Понравился сайт, также, как и мы любишь мемы, и хочешь принимать участие в пополении коллекции популярных мемов?</h2>
+    <p class = "p_contact">Заполни форму и мы с тобой свяжемся в ближайшее время!</h3>
+
+
+    <form method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
+{% endblock %}

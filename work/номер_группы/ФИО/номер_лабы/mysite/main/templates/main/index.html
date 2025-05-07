@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header >
+        <h1>Memes</h1>
+        <nav>
+            <a href="/" class="{% if request.path == '/' %}active{% endif %}">Главная</a>
+            <a href="/about/" class="{% if request.path == '/about/' %}active{% endif %}">О разработке</a>
+            <a href="/contact/" class="{% if request.path == '/contact/' %}active{% endif %}">Сотрудничество</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block main_content %}
+
+        <div class="container_1">
+            <div class="gallery-container">
+                    <!-- Галерея с горизонтальной прокруткой -->
+                    <h2 class="gallery-title">Галерея мемов</h2>
+                    
+                    <div class="gallery-scroll">
+                        {% for img in gallery_images %}
+                        <div class="gallery-item">
+                            <img src="{% static img.url %}" alt="{{ img.alt }}" loading="lazy" data-name="{{ img.alt }}">
+                        </div>
+                        {% empty %}
+                            <p>Изображения не найдены. Добавьте файлы в static/images/gallery/</p>
+                        {% endfor %}
+                    </div>
+
+            </div>
+        </div>
+
+        <div class="container_2">
+
+            <div class="left_panel_container">
+                
+
+                <div class="photo_n_sound_container">
+
+                    <h3 class="meme-title">Bombardino Crocodilo</h3>
+                    {% include 'main/press_hint.html' %}
+
+                    <div class="meme-image-container">
+                        <img src="{% static 'images/bombardino_crocodilo.png' %}" alt="Бомбордиро Крокодило" class="meme-image" id="image-bombardino_crocodilo">
+
+                        <audio id="memeAudio_bombardino_crocodilo" src="{% static 'sound/bombardiro-crocodilo.mp3' %}" preload="auto"></audio>
+                    </div>
+                    <div id="container-bombardino_crocodilo"></div>
+
+
+
+
+
+                    <h3 class="meme-title">Brr Brr Patapin</h3>
+                    {% include 'main/press_hint.html' %}
+
+                    <div class="meme-image-container">
+                        <img src="{% static 'images/brr_brr_patapin.png' %}" alt="Брр Брр Патапин" class="meme-image" id="image-brr_brr_patapin">
+
+                        <audio id="memeAudio_brr_brr_patapin" src="{% static 'sound/br-br-patapim.mp3' %}" preload="auto"></audio>
+                    </div>
+
+                    <div id="container-brr_brr_patapin"></div>
+
+
+
+                    <h3 class="meme-title">Capibarello Cocossini</h3>
+                    {% include 'main/press_hint.html' %}
+
+                    <div class="meme-image-container">
+                        <img src="{% static 'images/capibarello_cocossini.jpg' %}" alt="Капибарелло Кокосини" class="meme-image" id="image-capibarello_cocossini">
+                        <audio id="memeAudio_capibarello_cocossini" src="{% static 'sound/Capybarello_Cococinni.mp3' %}" preload="auto"></audio>
+                    </div>
+
+                    <div id="container-another_meme"></div>
+
+
+                     <h3 class="meme-title">Chimpanzini Bananini</h3>
+                    {% include 'main/press_hint.html' %}
+
+                    <div class="meme-image-container">
+                        <img src="{% static 'images/chimpanzini_bananini.png' %}" alt="Шимпанзини Бананини" class="meme-image" id="image-chimpanzini_bananini">
+                        <audio id="memeAudio_chimpanzini_bananini" src="{% static 'sound/chimpanzini-bananini.mp3' %}" preload="auto"></audio>
+                    </div>
+                    <div id="container-chimpanzini_bananini"></div>
+
+
+                    <h3 class="meme-title">Tralalero Tralala</h3>
+                    {% include 'main/press_hint.html' %}
+
+                    <div class="meme-image-container">
+                        <img src="{% static 'images/tralalero_tralala.jpg' %}" alt="Тралелеро тралала" class="meme-image" id="image-tralalero_tralala">
+
+                        <audio id="memeAudio_tralalero_tralala" src="{% static 'sound/tralalero-tralala.mp3' %}" preload="auto"></audio>
+                    </div>
+                    <div id="container-tralalero_tralala"></div>
+
+
+                    <h3 class="meme-title">Trippi Troppi</h3>
+                    {% include 'main/press_hint.html' %}
+
+                    <div class="meme-image-container">
+                        <img src="{% static 'images/trippi_troppi.png' %}" alt="Триппи Троппи" class="meme-image" id="image-trippi_troppi">
+                        <audio id="memeAudio_trippi_troppi" src="{% static 'sound/trippi-troppi-troppa-trippa.mp3' %}" preload="auto"></audio>
+                    </div>
+                    <div id="container-another_meme"></div>
+
+
+                     <h3 class="meme-title">Tung Tung Tung Sahur</h3>
+                    {% include 'main/press_hint.html' %}
+
+                    <div class="meme-image-container">
+                        <img src="{% static 'images/tung_tung_tung_sahur.png' %}" alt="Тунг Тунг Тунг Сахур" class="meme-image" id="image-tung_tung_tung_sahur">
+                        <audio id="memeAudio_tung_tung_tung_sahur" src="{% static 'sound/tung-tung-tung-sahur.mp3' %}" preload="auto"></audio>
+                    </div>
+                    <div id="container-tung_tung_tung_sahur"></div>
+
+
+                </div>
+            </div>
+            
+            <!-- Правая панель -->
+            <div class="side-panel">
+                <h3>Все звуки с сайта</h3>
+                <p>Здесь будут все звуки с сайта</p>
+            </div>
+
+        </div>
+        
+        
+        {% endblock %}
+    </main>
+
+    <footer>
+        <hr>
+        <p>&copy; 2025. Все права защищены.</p>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/video_loader.js' %}"></script>
+
+
+</body>
+</html>

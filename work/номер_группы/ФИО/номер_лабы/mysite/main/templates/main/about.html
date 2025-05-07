@@ -1,0 +1,51 @@
+{% extends 'main/index.html' %}
+{% block title %}О разработке{% endblock %}
+
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+{% block main_content %}
+    <div class="container">
+        <div class = "container_1"> 
+
+            <div class="block_all_info">
+                <h3> Общая информация о проекте </h3>
+
+                <p> Сайт был создан в апреле 2025 года в рамках учебного проекта. Разработан данный сайт с использованием Django. Сайт представляет собой сборник популярных итальянских мемов и звуков к ним. Создан с особой любовью и внимательностью к деталям! :3 </p>
+
+                <p>Сайт Memes имеет 3 страницы: "Главная", "О разработке и "Сотрудничество"</p>
+
+            </div>
+
+            <div class="block_tech_n_tools"> 
+                <h3> Технологии и инструменты </h3>
+                <p>Этот проект был создан с использованием различных технологий и инструментов. В процессе разработки использовались следующие компоненты:</p>
+                <ul>
+                    <li>Python 3.9</li>
+                    <li>Django 4.2</li>
+                    <li>HTML5 + CSS3</li>
+                    <li>SQLite для хранения данных</li>
+                    <li>Sublime text / PyCharm для написания кода</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="container_2">
+
+            <div class="block_author"> 
+                <img src="{% static 'images/author.jpg' %}" alt="Фото автора"> 
+                <div class="author_info">
+                    <h3>Об авторе:</h3>
+                    <p>Автор: Бакланова Анастасия</p>
+                    <p>Группа: К3322</p>
+                    <p>Поток: Web 1.3</p>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}
